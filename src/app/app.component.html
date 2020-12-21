@@ -1,1 +1,16 @@
 <h1>Hello</h1>
+<table border="1">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Title</th>
+      <th>User Id</th>
+    </tr>
+  </thead>
+
+  <tr *ngFor="let item of data">
+    <td>{{ item.id }}</td>
+    <td>{{ item.title }}</td>
+    <td>{{ item.userId }}</td>
+  </tr>
+</table>
