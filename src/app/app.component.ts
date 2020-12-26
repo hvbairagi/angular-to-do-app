@@ -1,5 +1,6 @@
+import { ThisReceiver } from '@angular/compiler';
 import { Component } from '@angular/core';
-import { UserServiceService } from './user-service.service';
+import { Todo } from './todo';
 
 @Component({
   selector: 'app-root',
@@ -9,12 +10,27 @@ import { UserServiceService } from './user-service.service';
 export class AppComponent {
   title = 'angularApp2';
 
-  data: any;
+  todoValue: string;
+  list: Todo[];
 
-  constructor(private user: UserServiceService) {
-    this.user.getData().subscribe((data) => {
-      console.log(data);
-      this.data = data;
-    });
+  ngOnInit() {
+    this.list = [];
+    this.todoValue = '';
+  }
+
+  addItem() {
+    if (this.todoValue !== '') {
+      const newItem: Todo = {
+        id: Date.now(),
+        value: this.todoValue,
+        isDone: false,
+      };
+      this.list.push(newItem);
+      this.todoValue = '';
+    }
+  }
+
+  deleteItem(id: number) {
+    this.list = this.list.filter((item) => item.id !== id);
   }
 }

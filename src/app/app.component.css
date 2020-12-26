@@ -1,0 +1,29 @@
+.app-title {
+  color: white;
+}
+
+.input-text {
+  padding: 5px;
+  margin: 5px;
+}
+.add-btn {
+  color: white;
+  background-color: #62009c;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.btn {
+  color: #fff;
+  background-color: #e8290b;
+}
+
+.list {
+  color: black;
+  background-color: white;
+  display: flex;
+  justify-content: space-around;
+  width: 30%;
+  margin: auto;
+  margin-top: 10px;
+}
